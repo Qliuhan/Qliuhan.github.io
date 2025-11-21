@@ -1,3 +1,78 @@
-<h1>hhhh</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>彩色居中标题示例</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #0b0b0b;
+    }
+
+    /* 整页背景（使用你上传的图片） */
+    .page {
+      min-height: 100%;
+      display: flex;
+      align-items: center;           /* 垂直居中 */
+      justify-content: center;       /* 水平居中 */
+      background-image: url('/mnt/data/628e4ac3-a6a0-4ad7-9052-d5eb834322cf.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* 标题外框（便于在复杂背景上阅读）*/
+    .title-wrap {
+      text-align: center;
+      padding: 18px 28px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px) saturate(120%);
+      background: rgba(0,0,0,0.35);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+    }
+
+    /* 渐变彩色标题 */
+    .rainbow-title {
+      font-size: clamp(2rem, 6vw, 4rem);  /* 自适应大小 */
+      font-weight: 800;
+      line-height: 1.05;
+      margin: 0;
+      /* 渐变色 + 文字裁切显示 */
+      background: linear-gradient(90deg, #ff7a18, #ffb22a 25%, #7be495 50%, #4fd3ff 75%, #8a6cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* 阴影提升可读性 */
+      text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+
+    /* 可选副标题 */
+    .subtitle {
+      margin-top: 8px;
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    /* 小屏优化 */
+    @media (max-width: 480px) {
+      .title-wrap { padding: 12px 14px; }
+      .subtitle { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="title-wrap">
+      <h1 class="rainbow-title">彩色居中标题</h1>
+      <div class="subtitle">这是一个位于页面正中并带渐变色的标题示例</div>
+    </div>
+  </div>
+</body>
+</html>
+
 
 
