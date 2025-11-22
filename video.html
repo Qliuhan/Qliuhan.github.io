@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>GitHub Pages 视频示例</title>
-    
+    .container {
+            display: flex;
+            justify-content: center;  /* 居中整个区域 */
+            align-items: center;      /* 垂直方向对齐 */
+            gap: 40px;                /* 左右间距 */
+            margin-top: 40px;
+        }
+
+        .text-box {
+            font-size: 20px;
+            color: #333;
+            max-width: 300px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <h1 style="text-align:center;">
@@ -15,11 +29,22 @@
 </h1>
     <h2> Straight waveguide example </h2>
 
+    <div class="container">
+    <div class="text-box">
+        <b>这是说明文字：</b><br><br>
+        - 这里可以写视频介绍内容<br>
+        - 支持多行文字<br>
+        - 支持自动换行和调整宽度<br>
+    </div>
+
     <!-- 本地视频 -->
     <video width="360" height="360" controls>
         <source src="mp4/slab1_coarse_Ez.mp4" type="video/mp4" autoplay muted loop>
         你的浏览器不支持 video 标签。
     </video>
+</div>
+
+    
 </body>
 </html>
 
