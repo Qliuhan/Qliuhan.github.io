@@ -18,6 +18,17 @@
             max-width: 300px;
             text-align: left;
         }
+        .video-row {
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            gap: 20px;               /* 视频之间的间距 */
+            margin-top: 30px;
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -38,11 +49,12 @@
         - 支持自动换行和调整宽度<br>
     </div>
 
-    <!-- 本地视频 -->
+    <div class="video-item">
     <video width="360" height="360" controls>
         <source src="mp4/slab1_coarse_Ez.mp4" type="video/mp4" autoplay muted loop>
-        你的浏览器不支持 video 标签。
+        <div class="caption">视频 1 注释</div>
     </video>
+    </div>
 </div>
 
     
