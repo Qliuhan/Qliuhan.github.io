@@ -5,41 +5,50 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>GitHub Pages 视频示例</title>
     <style>
+        /* 父容器 */
         .container {
-                position: relative;       /* 子 div 相对定位的参考 */
-                width: 1600px;
-                height: 500px;
-                background-color: #f0f0f0;
-                margin: 0 auto;
-            }
-    
-         .child {
-             position: absolute;       /* 脱离文档流，可精确定位 */
-             width: 100px;
-             height: 80px;
-             background-color: lightblue;
-             text-align: center;
-             line-height: 80px;
-         }
-        .child_video {
-             position: absolute;       /* 脱离文档流，可精确定位 */
-             width: 400px;
-             height: 400px;
-             /* background-color: lightblue; */
-             /* text-align: center; */
-             /* line-height: 80px; */
-         }
-        .video-row {
             display: flex;
-            justify-content: center; /* 水平居中 */
-            gap: 20px;               /* 视频之间的间距 */
-            margin-top: 30px;
+            justify-content: center;      /* 整体水平居中 */
+            align-items: flex-start;      /* 顶部对齐 */
+            flex-wrap: wrap;              /* 屏幕变窄时换行 */
+            gap: 20px;                    /* 左右间距 */
+            padding: 20px;
         }
-        .caption {
-            margin-top: 10px;
-            font-size: 16px;
+        
+        /* 左边文本框 */
+        .text-box {
+            flex: 0 0 200px;              /* 固定宽度200px，不放大不缩小 */
+            min-width: 150px;             /* 最小宽度，保证小屏幕显示 */
+            background-color: lightblue;
+            font-size: 18px;
             color: #333;
+            padding: 10px;
+            text-align: center;
+            line-height: 1.5;
         }
+        
+        /* 右边视频区域 */
+        .videos {
+            display: flex;
+            flex: 1;                      /* 占据剩余空间，自适应 */
+            justify-content: flex-start;   /* 视频靠左排列 */
+            gap: 10px;                     /* 视频之间间距 */
+            flex-wrap: wrap;               /* 小屏幕换行 */
+        }
+        
+        /* 单个视频框 */
+        .video-box {
+            flex: 1 1 150px;              /* 视频宽度至少150px，自适应 */
+            max-width: 200px;
+            background-color: lightgray;
+        }
+        
+        .video-box video {
+            width: 100%;                  /* 视频宽度填满容器 */
+            height: auto;                 /* 高度自适应保持比例 */
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -67,18 +76,30 @@
 </div>
 
 <div class="container">
-    <div class="child" style="top: 20%; left: 10px;">
-        <p style="font-size: 20px;">
-        <b>\( E_z \)</b>
-        </p>
+    <div class="text-box">
+        左边文本框内容
     </div>
-    
-    <div class="child_video" style="top: 20px; left: 120px;>
-    <video src="mp4/slab1_coarse_Ez.mp4" autoplay muted loop></video>
-    <div class="caption">视频 1 注释</div>
+
+    <div class="videos">
+        <div class="video-box">
+            <video controls autoplay muted loop>
+                <source src="video1.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+            </video>
+        </div>
+        <div class="video-box">
+            <video controls autoplay muted loop>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box">
+            <video controls autoplay muted loop>
+                <source src="video3.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 </div>
-    
+
 
 <!-- <div class="container">
     <div class="text-box">
