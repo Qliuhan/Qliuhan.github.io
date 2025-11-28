@@ -6,21 +6,20 @@
     <title>GitHub Pages 视频示例</title>
     <style>
     .container {
-            display: flex;
-            justify-content: center;  /* 居中整个区域 */
-            align-items: center;      /* 垂直方向对齐 */
-            gap: 40px;                /* 左右间距 */
-            margin-top: 40px;
+            position: relative;       /* 子 div 相对定位的参考 */
+            width: 600px;
+            height: 200px;
+            background-color: #f0f0f0;
         }
 
-        .text-box {
-            font-size: 20px;
-            color: #333;
-            max-width: 300px;
-            text-align: left;
-            float: left;
-            background-color:lightblue
-        }
+     .child {
+         position: absolute;       /* 脱离文档流，可精确定位 */
+         width: 100px;
+         height: 80px;
+         background-color: lightblue;
+         text-align: center;
+         line-height: 80px;
+     }
         .video-row {
             display: flex;
             justify-content: center; /* 水平居中 */
@@ -59,7 +58,7 @@
 </div>
 
 <div class="container">
-    <div class="text-box">
+    <div class="child" style="top: 10px; left: 10px;">
         <b>这是说明文字：</b>
     </div>
 </div>
