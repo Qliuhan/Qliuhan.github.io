@@ -31,14 +31,15 @@
         .videos {
             display: flex;
             flex: 1;                      /* 占据剩余空间，自适应 */
-            justify-content: flex-start;   /* 视频靠左排列 */
+            /* justify-content: flex-start;   /* 视频靠左排列 */ */
+            justify-content: center;   /* 视频水平居中排列 */
             gap: 10px;                     /* 视频之间间距 */
             flex-wrap: wrap;               /* 小屏幕换行 */
         }
         
         /* 单个视频框 */
         .video-box {
-            flex: 1 1 150px;              /* 视频宽度至少150px，自适应 */
+            flex: 1 1 300px;              /* 视频宽度至少150px，自适应 */
             max-width: 200px;
             background-color: lightgray;
         }
