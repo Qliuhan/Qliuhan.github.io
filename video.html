@@ -56,6 +56,39 @@
             display: block;
         }
 
+        .title-row {
+            display: flex;
+            justify-content: space-between; /* 3个标题分布排列 */
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* 所有小标题的共同样式 */
+        .sub-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        /* 可单独控制每一个标题的位置与样式 */
+        .left-title {
+            text-align: left;
+            flex: 1;               /* 占据三分之一空间 */
+            color: #333;
+        }
+        
+        .center-title {
+            text-align: center;
+            flex: 1;
+            color: #0077cc;
+        }
+        
+        .right-title {
+            text-align: right;
+            flex: 1;
+            color: #cc0000;
+        }
+
     </style>
 </head>
 <body>
@@ -86,6 +119,12 @@
 
  <details>
     <summary>点击展开 / 收起</summary> 
+<div class="title-row">
+    <div class="sub-title left-title">小标题 1</div>
+    <div class="sub-title center-title">小标题 2</div>
+    <div class="sub-title right-title">小标题 3</div>
+</div>
+
 <div class="container">
     <div class="text-box">
         \( E_z \)
