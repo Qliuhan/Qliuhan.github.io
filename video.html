@@ -56,38 +56,24 @@
             display: block;
         }
 
-        .title-row {
-            display: flex;
-            justify-content: space-between; /* 3个标题分布排列 */
-            align-items: center;
-            width: 100%;
-            margin-bottom: 10px;
+        /* 小标题 */
+        .title-container {
+            position: relative;      /* 让内部 absolute 定位基于此容器 */
+            height: 60px;            /* 可以根据你的标题所需高度调整 */
+            background-color: #f0f0f0;
         }
-
-        /* 所有小标题的共同样式 */
+        
+        /* 小标题基本样式 */
         .sub-title {
+            position: absolute;      /* 开启绝对定位 */
             font-size: 20px;
             font-weight: bold;
         }
         
-        /* 可单独控制每一个标题的位置与样式 */
-        .left-title {
-            text-align: left;
-            flex: 1;               /* 占据三分之一空间 */
-            color: #333;
-        }
-        
-        .center-title {
-            text-align: center;
-            flex: 1;
-            color: #0077cc;
-        }
-        
-        .right-title {
-            text-align: right;
-            flex: 1;
-            color: #cc0000;
-        }
+        /* 精确控制每一个标题的位置 */
+        .t1 { top: 10px; left: 20px; }
+        .t2 { top: 10px; left: 300px; }
+        .t3 { top: 10px; right: 30px; }
 
     </style>
 </head>
@@ -119,14 +105,12 @@
 
  <details>
     <summary>点击展开 / 收起</summary> 
-<div class="title-row">
-    <div class="text-box">
-        \( E_z \)
-    </div>
-    <div class="sub-title left-title">小标题 1</div>
-    <div class="sub-title center-title">小标题 2</div>
-    <div class="sub-title right-title">小标题 3</div>
+<div class="title-container">
+    <div class="sub-title t1">小标题 1</div>
+    <div class="sub-title t2">小标题 2</div>
+    <div class="sub-title t3">小标题 3</div>
 </div>
+
 
 <div class="container">
     <div class="text-box">
